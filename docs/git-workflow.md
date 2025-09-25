@@ -50,7 +50,8 @@ merge conflict resolved
 ### Commit Rules
 
 1. **Use imperative mood**: "add" not "added" or "adds"
-2. **Limit first line to 72 characters**34. **No period at the end of description**
+2. **Limit first line to 72 characters**
+3. **No period at the end of description**
 
 ### Breaking Changes
 
