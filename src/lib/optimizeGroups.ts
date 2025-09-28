@@ -518,14 +518,12 @@ export function generateBestPartition(
 
   // STEP 6: Report algorithm performance metrics
   if (debugOptions.logMemoHits || debugOptions.logPruning || debugOptions.logBestUpdates) {
-    console.log(`
-📊 ALGORITHM PERFORMANCE SUMMARY
-================================
-🎯 Memoization hits: ${memoHits} (cache efficiency)
-✂️ Branches pruned: ${pruningCount} (optimization effectiveness) 
-🏆 Best solutions found: ${bestUpdateCount} (solution quality improvements)
-🔢 Final best score: ${globalBestScore}
-    `);
+    console.log("ALGORITHM PERFORMANCE SUMMARY");
+    console.log("================================");
+    console.log("Memoization hits: " + memoHits + " (cache efficiency)");
+    console.log("Branches pruned: " + pruningCount + " (optimization effectiveness)");
+    console.log("Best solutions found: " + bestUpdateCount + " (solution quality improvements)");
+    console.log("Final best score: " + globalBestScore);
   }
 
   // STEP 7: Return the optimal solution with consistent formatting
