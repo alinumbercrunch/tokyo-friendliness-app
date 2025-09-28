@@ -70,7 +70,6 @@ function buildFriendlinessMatrix(rows: Record<string, string>[]): FriendlinessMa
       }
     }
   }
-  console.log("Parsed Friendliness Matrix:", matrix);
 
   return matrix;
 }
@@ -99,3 +98,4 @@ function parseValue(value: string): number | undefined {
 
   return num;
 }
+
