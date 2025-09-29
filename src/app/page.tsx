@@ -1,9 +1,9 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 
-import { loadFriendlinessMatrix } from "../lib/parseFriendlinessCSV";
-import { generateBestPartition } from "../lib/optimizeGroups";
-import type { FriendlinessMap } from "../lib/types";
+import { loadFriendlinessMatrix } from "@/lib/parseFriendlinessCSV";
+import { generateBestPartition } from "@/lib/optimizeGroups";
+import type { FriendlinessMap } from "@/lib/types";
 
 export default async function Home() {
   // TEMP: Test CSV parsing and optimization
@@ -21,14 +21,12 @@ export default async function Home() {
     friendlinessMap.set(fromPrefecture, innerMap);
   }
 
-  // Test with first 5 prefectures for quick results
+  // Use all prefectures for optimization and validation
   const allPrefectures = Object.keys(matrix);
-  const testPrefectures = allPrefectures.slice(0, 5);
-
-  console.log("🧪 Testing optimization with:", testPrefectures);
+  console.log("🧪 Testing optimization with:", allPrefectures);
 
   // Add more detailed debugging
-  const bestPartition = generateBestPartition(testPrefectures, friendlinessMap, 3, {
+  const bestPartition = generateBestPartition(allPrefectures, friendlinessMap, 3, {
     logBestUpdates: true,
     logPruning: true,
     logMemoHits: true,
@@ -41,7 +39,7 @@ export default async function Home() {
 
   // Generate ALL possible partitions for comparison
   const { generatePartitions, calculatePartitionScore } = await import("../lib/optimizeGroups");
-  const allPartitions = generatePartitions(testPrefectures, 3);
+  const allPartitions = generatePartitions(allPrefectures, 3);
 
   console.log(`📝 Total possible partitions: ${allPartitions.length}`);
 

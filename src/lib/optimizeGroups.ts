@@ -1,9 +1,9 @@
-import type { Partition, FriendlinessMap, DebugOptions, MemoResult } from "./types";
-import { DEFAULT_MAX_GROUPS } from "./types";
-import { validatePartitionInputs, validateFriendlinessMap } from "./validators";
-import { calculateMaxRemainingPotential, calculateIncrementalScore } from "./scoring";
-import { makeMemoKey } from "./memoization";
-import { deepCopy, sortPartition } from "./partitionUtils";
+import type { Partition, FriendlinessMap, DebugOptions, MemoResult } from "@/lib/types";
+import { DEFAULT_MAX_GROUPS } from "@/lib/types";
+import { validatePartitionInputs, validateFriendlinessMap } from "@/lib/validators";
+import { calculateMaxRemainingPotential, calculateIncrementalScore } from "@/lib/scoring";
+import { makeMemoKey } from "@/lib/memoization";
+import { deepCopy, sortPartition } from "@/lib/partitionUtils";
 
 // Re-export commonly used functions and types
 export {
