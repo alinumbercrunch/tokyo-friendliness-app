@@ -1,7 +1,7 @@
 import path from "path";
 import { promises as fs } from "fs";
 import Papa from "papaparse";
-import type { FriendlinessMatrix } from "./types";
+import type { FriendlinessMatrix } from "@/lib/types";
 
 // Constants
 const CSV_FILE_PATH = "src/lib/data/friendliness.csv";
@@ -98,4 +98,3 @@ function parseValue(value: string): number | undefined {
 
   return num;
 }
-

@@ -1,4 +1,4 @@
-import type { Partition, PartitionSet } from "./types";
+import type { Partition, PartitionSet } from "@/lib/types";
 
 /**
  * Deep copy a partition

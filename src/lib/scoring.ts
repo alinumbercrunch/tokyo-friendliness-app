@@ -1,4 +1,4 @@
-import type { Partition, FriendlinessMap } from "./types";
+import type { Partition, FriendlinessMap } from "@/lib/types";
 
 /**
  * Calculates the total friendship score for a group of prefectures
