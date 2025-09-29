@@ -16,5 +16,16 @@ export interface DebugOptions {
 // Memoization cache type
 export type MemoResult = { score: number; partition: Partition };
 
+// Color ranking types
+export type GroupColor = "gold" | "silver" | "bronze";
+
+export interface GroupColorRanking {
+  groupIndex: number;
+  prefectures: string[];
+  groupScore: number;
+  colorRank: GroupColor;
+  hexColor: string;
+}
+
 // Constants
 export const DEFAULT_MAX_GROUPS = 3;
