@@ -38,6 +38,29 @@
   font-family: var(--font-geist-mono);
   padding-left: 0;
   margin: 0;
+}
+
+.validation {
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 8px;
+  background: var(--gray-alpha-100);
+  text-align: center;
+}
+
+.success {
+  color: #22c55e;
+  font-weight: 600;
+  margin: 0;
+}
+
+.warning {
+  color: #f59e0b;
+  font-weight: 600;
+  margin: 0;
+}
+
+.main ol {
   font-size: 14px;
   line-height: 24px;
   letter-spacing: -0.01em;

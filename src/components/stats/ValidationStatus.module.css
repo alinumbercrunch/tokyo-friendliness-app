@@ -1,0 +1,28 @@
+.validation {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: var(--gray-alpha-100);
+  text-align: center;
+  border: 1px solid var(--gray-alpha-200);
+}
+
+.success {
+  color: #22c55e;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.warning {
+  color: #f59e0b;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.info {
+  color: #6c757d;
+  margin: 0;
+  font-size: 0.95rem;
+}
