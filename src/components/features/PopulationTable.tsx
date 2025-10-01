@@ -1,33 +1,56 @@
-import { getBestPopulationData } from "@/lib/getStatsData";
-import { logger } from "@/lib/logger";
 import styles from "./PopulationTable.module.css";
-import type { PopulationRow } from "@/lib/estatTypes";
-import type { OptimizationResult } from "@/lib/optimizationService";
+import type { PopulationRow } from "@/lib/data/estatTypes";
+import type { OptimizationResult } from "@/lib/services/optimizationService";
 
+/**
+ * Props for the PopulationTable component
+ */
 interface PopulationTableProps {
+  /** 
+   * Optimization results containing prefecture groupings and scores
+   * Used to apply color coding to table cells based on friendship groups
+   */
   optimizationResults: OptimizationResult;
+  
+  /** 
+   * Population data fetched from e-Stat API
+   * Contains prefecture population numbers by year
+   * @default null
+   */
+  populationData?: PopulationRow[] | null;
+  
+  /** 
+   * Error message if data fetching failed
+   * When provided, component renders error state instead of table
+   * @default null
+   */
+  error?: string | null;
 }
 
-export default async function PopulationTable({ optimizationResults }: PopulationTableProps) {
-  let data: PopulationRow[] | null = null;
-  let error: string | undefined;
-
-  try {
-    logger.info("Fetching population data from e-Stat API");
-    data = await getBestPopulationData();
-
-    if (!data || data.length === 0) {
-      throw new Error("No population data found");
-    }
-  } catch (err) {
-    const errorMessage = err instanceof Error ? err.message : "Unknown error occurred";
-    logger.error("Failed to fetch population data from e-Stat API", {
-      error: errorMessage,
-      timestamp: new Date().toISOString(),
-    });
-    error = errorMessage;
-  }
-
+/**
+ * Population Table Component
+ * 
+ * Displays Japanese prefecture population data in a tabular format with color-coded
+ * groupings based on friendship optimization results. Each prefecture is colored
+ * according to its friendship group ranking (gold, silver, bronze).
+ * 
+ * Features:
+ * - Displays population data by prefecture and year
+ * - Color-codes table cells based on friendship optimization groups
+ * - Sorts prefectures by population (highest first)
+ * - Shows years in descending order (newest first)
+ * - Handles error and no-data states gracefully
+ * - Displays summary statistics (data count, group count, total score)
+ * 
+ * @param props - Component props
+ * @returns JSX element rendering the population table or error/no-data states
+ */
+export default function PopulationTable({ 
+  optimizationResults, 
+  populationData = null, 
+  error = null 
+}: PopulationTableProps) {
+  // Handle error state
   if (error) {
     return (
       <div className={styles.error}>
@@ -38,7 +61,8 @@ export default async function PopulationTable({ optimizationResults }: Populatio
     );
   }
 
-  if (!data || data.length === 0) {
+  // Handle no data state
+  if (!populationData || populationData.length === 0) {
     return (
       <div className={styles.noData}>
         <h2>首都圏人口データ</h2>
@@ -47,11 +71,11 @@ export default async function PopulationTable({ optimizationResults }: Populatio
     );
   }
 
-  // Get unique years and prefectures from data
-  const years = [...new Set(data.map((row) => row.year))].sort((a, b) => b - a); // Descending order (newer first)
+  // Get unique years and prefectures from populationData
+  const years = [...new Set(populationData.map((row) => row.year))].sort((a, b) => b - a); // Descending order (newer first)
 
   // Get prefectures sorted by population in descending order (highest population first)
-  const prefecturePopulations = data.reduce(
+  const prefecturePopulations = populationData.reduce(
     (acc, row) => {
       if (!acc[row.prefecture]) {
         acc[row.prefecture] = 0;
@@ -68,8 +92,8 @@ export default async function PopulationTable({ optimizationResults }: Populatio
 
   // Function to get population for a specific prefecture and year
   const getPopulation = (prefecture: string, year: number) => {
-    const row = data.find((d) => d.prefecture === prefecture && d.year === year);
-    return row?.population?.toLocaleString() || "-";
+    const row = populationData.find((d) => d.prefecture === prefecture && d.year === year);
+    return row ? row.population.toLocaleString() : "-";
   };
 
   // Function to get group CSS class for a prefecture
@@ -89,7 +113,7 @@ export default async function PopulationTable({ optimizationResults }: Populatio
       <h2 className={styles.title}>首都圏人口データ（友好度グループ別色分け）</h2>
       <div className={styles.info}>
         <p>
-          データ件数: {data.length}件 | グループ数: {optimizationResults.bestPartition.length}つ
+          データ件数: {populationData.length}件 | グループ数: {optimizationResults.bestPartition.length}つ
         </p>
         <p>
           友好度合計スコア: <strong>{optimizationResults.totalScore.toFixed(1)}</strong>
