@@ -15,11 +15,11 @@ export const dynamic = "force-static"; // Force static generation
 export default async function Home() {
   // Perform heavy server-side optimization
   const optimizationResults = await performOptimization();
-  
+
   // Fetch population data at page level (separation of concerns)
   let populationData = null;
   let populationError = null;
-  
+
   try {
     populationData = await getBestPopulationData();
   } catch (error) {
@@ -45,7 +45,7 @@ export default async function Home() {
         <ColorLegend optimizationResults={optimizationResults} />
 
         {/* Population data table with friendliness-based grouping colors */}
-        <PopulationTable 
+        <PopulationTable
           optimizationResults={optimizationResults}
           populationData={populationData}
           error={populationError}
@@ -60,7 +60,6 @@ export default async function Home() {
         {/* Call-to-action section (customizable) */}
         <CTASection />
       </main>
-
     </div>
   );
 }

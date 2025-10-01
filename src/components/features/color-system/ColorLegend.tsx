@@ -16,11 +16,11 @@ interface ColorLegendProps {
 
 /**
  * Color Legend Component
- * 
+ *
  * Displays a visual legend showing the color coding system used throughout
  * the application. Each group is shown with its corresponding color, name,
  * and score points, sorted by score from highest to lowest.
- * 
+ *
  * Features:
  * - Shows 3 friendship groups (グループ1, グループ2, グループ3)
  * - Displays color swatches (blue, green, orange)
@@ -28,12 +28,12 @@ interface ColorLegendProps {
  * - Automatically sorts groups by score (highest first)
  * - Uses extracted utility functions for score processing
  * - Graceful fallback scores when optimization data is unavailable
- * 
+ *
  * Color Mapping:
  * - Blue: Typically highest scoring group
- * - Green: Medium scoring group  
+ * - Green: Medium scoring group
  * - Orange: Lower scoring group
- * 
+ *
  * @param props - Component props
  * @returns JSX element rendering the color legend with scores
  */

@@ -6,20 +6,20 @@ import type { OptimizationResult } from "@/lib/services/optimizationService";
  * Props for the PopulationTable component
  */
 interface PopulationTableProps {
-  /** 
+  /**
    * Optimization results containing prefecture groupings and scores
    * Used to apply color coding to table cells based on friendship groups
    */
   optimizationResults: OptimizationResult;
-  
-  /** 
+
+  /**
    * Population data fetched from e-Stat API
    * Contains prefecture population numbers by year
    * @default null
    */
   populationData?: PopulationRow[] | null;
-  
-  /** 
+
+  /**
    * Error message if data fetching failed
    * When provided, component renders error state instead of table
    * @default null
@@ -29,11 +29,11 @@ interface PopulationTableProps {
 
 /**
  * Population Table Component
- * 
+ *
  * Displays Japanese prefecture population data in a tabular format with color-coded
  * groupings based on friendship optimization results. Each prefecture is colored
  * according to its friendship group ranking (gold, silver, bronze).
- * 
+ *
  * Features:
  * - Displays population data by prefecture and year
  * - Color-codes table cells based on friendship optimization groups
@@ -41,14 +41,14 @@ interface PopulationTableProps {
  * - Shows years in descending order (newest first)
  * - Handles error and no-data states gracefully
  * - Displays summary statistics (data count, group count, total score)
- * 
+ *
  * @param props - Component props
  * @returns JSX element rendering the population table or error/no-data states
  */
-export default function PopulationTable({ 
-  optimizationResults, 
-  populationData = null, 
-  error = null 
+export default function PopulationTable({
+  optimizationResults,
+  populationData = null,
+  error = null,
 }: PopulationTableProps) {
   // Handle error state
   if (error) {
@@ -113,7 +113,8 @@ export default function PopulationTable({
       <h2 className={styles.title}>首都圏人口データ（友好度グループ別色分け）</h2>
       <div className={styles.info}>
         <p>
-          データ件数: {populationData.length}件 | グループ数: {optimizationResults.bestPartition.length}つ
+          データ件数: {populationData.length}件 | グループ数:{" "}
+          {optimizationResults.bestPartition.length}つ
         </p>
         <p>
           友好度合計スコア: <strong>{optimizationResults.totalScore.toFixed(1)}</strong>

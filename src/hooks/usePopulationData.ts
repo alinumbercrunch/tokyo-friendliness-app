@@ -1,6 +1,6 @@
 /**
  * Population Data Hook
- * 
+ *
  * Custom React hook for fetching and managing population data from the e-Stat API.
  * Provides a clean separation between data fetching logic and UI components.
  */
@@ -26,26 +26,26 @@ interface UsePopulationDataResult {
 
 /**
  * Custom hook for fetching population data from e-Stat API
- * 
+ *
  * Encapsulates the data fetching logic and state management for population data.
  * Automatically fetches data on component mount and handles loading, error, and success states.
- * 
+ *
  * Features:
  * - Automatic data fetching on hook initialization
  * - Loading state management
  * - Error handling with user-friendly messages
  * - Logging for debugging and monitoring
  * - Clean state management with proper cleanup
- * 
+ *
  * Usage:
  * ```tsx
  * const { data, error, loading } = usePopulationData();
- * 
+ *
  * if (loading) return <LoadingComponent />;
  * if (error) return <ErrorComponent error={error} />;
  * if (data) return <DataComponent data={data} />;
  * ```
- * 
+ *
  * @returns Object containing data, error, and loading states
  */
 export function usePopulationData(): UsePopulationDataResult {
