@@ -1,3 +1,5 @@
+import { ALGORITHM } from "./constants";
+
 // Core types for partition optimization
 export type Partition = string[][];
 export type PartitionSet = Partition[];
@@ -28,4 +30,4 @@ export interface GroupColorRanking {
 }
 
 // Constants
-export const DEFAULT_MAX_GROUPS = 3;
+export const DEFAULT_MAX_GROUPS = ALGORITHM.DEFAULT_MAX_GROUPS;

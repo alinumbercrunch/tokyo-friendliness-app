@@ -22,8 +22,10 @@ export interface OptimizationResult {
 /**
  * Server-side function to perform heavy optimization calculations
  */
+import { logger } from "@/lib/shared/logger";
+
 export async function performOptimization(): Promise<OptimizationResult> {
-  console.log("🚀 Starting optimization process...");
+  logger.info("Starting optimization process");
 
   // Load and process data
   const matrix = await loadFriendlinessMatrix();
@@ -38,7 +40,7 @@ export async function performOptimization(): Promise<OptimizationResult> {
   }
 
   const allPrefectures = Object.keys(matrix);
-  console.log("🧪 Optimizing for prefectures:", allPrefectures);
+  logger.info("Optimizing for prefectures", { prefectures: allPrefectures });
 
   // Run optimization algorithm
   const bestPartition = generateBestPartition(allPrefectures, friendlinessMap, 3, {
@@ -64,19 +66,23 @@ export async function performOptimization(): Promise<OptimizationResult> {
   const isOptimal = algorithmScore === manualBestScore;
 
   if (isOptimal) {
-    console.log("✅ SUCCESS: Algorithm found optimal solution!");
+    logger.info("SUCCESS: Algorithm found optimal solution!");
   } else {
-    console.log("❌ WARNING: Algorithm may have missed optimal solution");
-    console.log("Expected:", manualBestScore, "Got:", algorithmScore);
+    logger.error("WARNING: Algorithm may have missed optimal solution", {
+      expected: manualBestScore,
+      actual: algorithmScore,
+    });
   }
 
   // Generate color rankings
   const colorRankings = colorTopGroupsByScore(bestPartition, friendlinessMap);
 
   // Log detailed breakdown
-  console.log("\n📊 Best partition breakdown:");
-  bestPartition.forEach((group, index) => {
-    console.log(`Group ${index + 1}: [${group.join(", ")}]`);
+  logger.info("Best partition breakdown", {
+    partitions: bestPartition.map((group, index) => ({
+      groupNumber: index + 1,
+      prefectures: group,
+    })),
   });
 
   return {

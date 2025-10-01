@@ -31,12 +31,13 @@ const DEFAULT_GROUPS = [
   { name: "グループ3", color: "orange", index: 2 },
 ];
 
+import { UI_DEFAULTS } from "@/lib/shared/constants";
+
 /**
  * Fallback scores used when optimization results are not available
  * Provides reasonable default scores for demonstration purposes
  */
-
-const FALLBACK_SCORES = [45, 30, 25];
+const FALLBACK_SCORES = UI_DEFAULTS.FALLBACK_GROUP_SCORES;
 
 /**
  * Extracts group score from optimization results
@@ -46,7 +47,7 @@ export function getGroupScore(
   optimizationResults?: OptimizationResult
 ): number {
   if (!optimizationResults?.colorRankings) {
-    return FALLBACK_SCORES[groupIndex] || 0;
+    return FALLBACK_SCORES[groupIndex] ?? 0;
   }
 
   const ranking = optimizationResults.colorRankings.find((r) => r.groupIndex === groupIndex);
