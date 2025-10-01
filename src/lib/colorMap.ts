@@ -1,10 +1,10 @@
 import type { GroupColor, GroupColorRanking, Partition, FriendlinessMap } from "@/lib/types";
 
-// Fixed medal colors
-const MEDAL_COLORS: Record<GroupColor, string> = {
-  gold: "#FFD700",    // Group 1
-  silver: "#C0C0C0",  // Group 2  
-  bronze: "#CD7F32"   // Group 3
+// Fixed group colors
+const GROUP_COLORS: Record<GroupColor, string> = {
+  gold: "#2196f3",    // Group 1 - Blue
+  silver: "#43a047",  // Group 2 - Green
+  bronze: "#ff9800"   // Group 3 - Orange
 } as const;
 
 /**
@@ -39,7 +39,7 @@ export function colorTopGroups(partition: Partition): GroupColorRanking[] {
       prefectures: group,
       groupScore: 0, // Will be calculated separately if needed
       colorRank,
-      hexColor: MEDAL_COLORS[colorRank]
+      hexColor: GROUP_COLORS[colorRank]
     };
   });
 }
@@ -73,7 +73,16 @@ export function colorTopGroupsByScore(
       prefectures: group.prefectures,
       groupScore: group.groupScore,
       colorRank,
-      hexColor: MEDAL_COLORS[colorRank]
+      hexColor: GROUP_COLORS[colorRank]
     };
   });
+}
+
+/**
+ * Get hex color for a group index (0-based)
+ */
+export function getColorForGroup(groupIndex: number): string {
+  const colors: GroupColor[] = ["gold", "silver", "bronze"];
+  const colorRank = colors[groupIndex] || "bronze";
+  return GROUP_COLORS[colorRank];
 }
