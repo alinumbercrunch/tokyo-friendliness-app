@@ -1,6 +1,6 @@
 /**
  * Color Legend Utilities
- * 
+ *
  * Utility functions for processing and formatting group data for the ColorLegend component.
  * Handles score extraction, group processing, and sorting logic.
  */
@@ -49,9 +49,7 @@ export function getGroupScore(
     return FALLBACK_SCORES[groupIndex] || 0;
   }
 
-  const ranking = optimizationResults.colorRankings.find(
-    (r) => r.groupIndex === groupIndex
-  );
+  const ranking = optimizationResults.colorRankings.find((r) => r.groupIndex === groupIndex);
   return ranking?.groupScore ? Math.round(ranking.groupScore) : 0;
 }
 
@@ -61,10 +59,8 @@ export function getGroupScore(
 export function processGroupsWithScores(
   optimizationResults?: OptimizationResult
 ): GroupWithScore[] {
-  return DEFAULT_GROUPS
-    .map((group) => ({
-      ...group,
-      score: getGroupScore(group.index, optimizationResults),
-    }))
-    .sort((a, b) => b.score - a.score);
+  return DEFAULT_GROUPS.map((group) => ({
+    ...group,
+    score: getGroupScore(group.index, optimizationResults),
+  })).sort((a, b) => b.score - a.score);
 }

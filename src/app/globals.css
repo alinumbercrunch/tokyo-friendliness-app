@@ -1,23 +1,23 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  
+
   /* Color palette */
   --color-blue: #2196f3;
   --color-green: #43a047;
   --color-orange: #ff9800;
-  
+
   /* Gray scale */
   --gray-alpha-200: rgba(0, 0, 0, 0.1);
   --gray-light: #f8f9fa;
   --gray-medium: #e9ecef;
   --gray-dark: #6c757d;
-  
+
   /* Common colors */
   --border-color: #e0e0e0;
   --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
   --shadow-medium: 0 4px 18px rgba(0, 0, 0, 0.1);
-  
+
   /* Text colors with fallbacks */
   --text-primary: #212529;
   --text-secondary: #6c757d;
@@ -49,7 +49,15 @@ body {
 }
 
 /* Ensure all text elements inherit proper color */
-h1, h2, h3, h4, h5, h6, p, span, div {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div {
   color: inherit;
 }
 
