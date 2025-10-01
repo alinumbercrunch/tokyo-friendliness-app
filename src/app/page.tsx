@@ -61,7 +61,6 @@ export default async function Home() {
         <CTASection />
       </main>
 
-
     </div>
   );
 }
