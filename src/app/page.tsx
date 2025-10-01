@@ -5,7 +5,6 @@ import PopulationTable from "@/components/features/population/PopulationTable";
 import ColorLegend from "@/components/features/color-system/ColorLegend";
 import { ValidationStatus } from "@/components/stats/ValidationStatus";
 import { CTASection } from "@/components/ui/cta-section/CTASection";
-
 import { performOptimization } from "@/lib/services/optimizationService";
 import { getBestPopulationData } from "@/lib/data/getStatsData";
 
