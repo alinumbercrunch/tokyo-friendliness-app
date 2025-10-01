@@ -2,7 +2,7 @@ import styles from "./page.module.css";
 import { Header } from "@/components/ui/Header";
 import OptimizationResults from "@/components/features/OptimizationResults";
 import PopulationTable from "@/components/features/PopulationTable";
-import ColorLegend from "@/components/ColorLegend";
+import ColorLegend from "@/components/features/ColorLegend";
 import { ValidationStatus } from "@/components/stats/ValidationStatus";
 import { CTASection } from "@/components/ui/CTASection";
 import { Footer } from "@/components/footer/Footer";
@@ -28,7 +28,7 @@ export default async function Home() {
         />
 
         {/* Group color legend (Japanese) */}
-        <ColorLegend />
+        <ColorLegend optimizationResults={optimizationResults} />
 
         {/* Population data table with friendliness-based grouping colors */}
         <PopulationTable optimizationResults={optimizationResults} />

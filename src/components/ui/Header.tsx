@@ -14,8 +14,8 @@ export function Header() {
       />
       <h1 className={styles.title}>Tokyo Friendliness App</h1>
       <p className={styles.description}>
-        This app optimizes prefecture groupings based on friendliness data 
-        to maximize total friendship scores using advanced algorithms.
+        This app optimizes prefecture groupings based on friendliness data to maximize total
+        friendship scores using advanced algorithms.
       </p>
     </header>
   );

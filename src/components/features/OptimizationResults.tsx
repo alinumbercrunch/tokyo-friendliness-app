@@ -1,6 +1,5 @@
 "use client";
 
-import ColorLegend from "@/components/features/ColorLegend";
 import type { GroupColorRanking } from "@/lib/types";
 import styles from "./OptimizationResults.module.css";
 
@@ -13,24 +12,21 @@ interface OptimizationResultsProps {
 }
 
 export default function OptimizationResults({ initialResults }: OptimizationResultsProps) {
-  const { bestPartition, totalScore, colorRankings } = initialResults;
+  const { bestPartition, totalScore } = initialResults;
 
   return (
     <div className={styles.optimizationResults}>
-      <h2>Prefecture Grouping Results</h2>
+      <h2>都道府県グループ化結果</h2>
 
       {/* Display optimization stats */}
       <div className={styles.stats}>
         <p>
-          <strong>Total Groups:</strong> {bestPartition.length}
+          <strong>総グループ数:</strong> {bestPartition.length}
         </p>
         <p>
-          <strong>Total Score:</strong> {totalScore}
+          <strong>総合スコア:</strong> {totalScore}
         </p>
       </div>
-
-      {/* Display Color Rankings */}
-      <ColorLegend colorRankings={colorRankings} title="Group Rankings (by performance)" />
 
       {/* Group breakdown removed as requested */}
     </div>

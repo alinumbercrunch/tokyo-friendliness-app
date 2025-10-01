@@ -17,13 +17,7 @@ const eslintConfig = [
     "prettier"
   ),
   {
-    ignores: [
-      "node_modules/**",
-      ".next/**",
-      "out/**",
-      "build/**",
-      "next-env.d.ts"
-    ]
+    ignores: ["node_modules/**", ".next/**", "out/**", "build/**", "next-env.d.ts"],
   },
   {
     files: ["**/*.ts", "**/*.tsx"],
@@ -34,9 +28,9 @@ const eslintConfig = [
       "react-hooks/exhaustive-deps": "error",
       "prefer-const": "error",
       "no-var": "error",
-      "quotes": ["error", "double", { avoidEscape: true }]
-    }
-  }
+      quotes: ["error", "double", { avoidEscape: true }],
+    },
+  },
 ];
 
 export default eslintConfig;

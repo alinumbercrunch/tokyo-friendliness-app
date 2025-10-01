@@ -66,3 +66,23 @@
   font-size: 0.9rem;
   font-weight: 500;
 }
+
+.colorBox {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  flex-shrink: 0;
+}
+
+.blue {
+  background-color: #2196f3;
+}
+
+.green {
+  background-color: #43a047;
+}
+
+.orange {
+  background-color: #ff9800;
+}
