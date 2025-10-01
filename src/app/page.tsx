@@ -9,7 +9,8 @@ import { performOptimization } from "@/lib/services/optimizationService";
 import { getBestPopulationData } from "@/lib/data/getStatsData";
 
 // Static generation: pre-build page with hourly updates
-export const revalidate = 3600; // Regenerate every hour (CACHE_DURATION.PAGE_REVALIDATE)
+// Note: Next.js requires literal values for segment configs, so we can't use CACHE_DURATION.PAGE_REVALIDATE here
+export const revalidate = 3600; // Regenerate every hour
 export const dynamic = "force-static"; // Force static generation
 
 export default async function Home() {
