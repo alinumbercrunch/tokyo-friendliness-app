@@ -7,6 +7,7 @@ import { ValidationStatus } from "@/components/stats/ValidationStatus";
 import { CTASection } from "@/components/ui/CTASection";
 import { Footer } from "@/components/footer/Footer";
 import { performOptimization } from "@/lib/services/optimizationService";
+import { getBestPopulationData } from "@/lib/data/getStatsData";
 
 // Static generation: pre-build page with hourly updates
 export const revalidate = 3600; // Regenerate every hour
@@ -21,7 +22,6 @@ export default async function Home() {
   let populationError = null;
   
   try {
-    const { getBestPopulationData } = await import("@/lib/data/getStatsData");
     populationData = await getBestPopulationData();
   } catch (error) {
     populationError = error instanceof Error ? error.message : "Failed to fetch population data";
