@@ -2,7 +2,7 @@
 interface LogContext {
   error?: string;
   stack?: string;
-  timestamp: string;
+  timestamp?: string;
   [key: string]: unknown;
 }
 

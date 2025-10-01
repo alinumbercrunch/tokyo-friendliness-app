@@ -1,7 +1,11 @@
 import { PopulationRow } from "@/lib/estatTypes";
 
 const ESTAT_BASE_URL = "https://api.e-stat.go.jp/rest/3.0/app";
-const ESTAT_APP_ID = process.env.ESTAT_APP_ID || "48f424963466dd131f930d59a271590a257c5a80";
+const ESTAT_APP_ID = process.env.ESTAT_APP_ID;
+
+if (!ESTAT_APP_ID) {
+  throw new Error("ESTAT_APP_ID environment variable is required");
+}
 
 // Simple approach: try known dataset IDs and return working data
 export async function getRealPopulationData(): Promise<PopulationRow[]> {
@@ -60,26 +64,38 @@ export async function getRealPopulationData(): Promise<PopulationRow[]> {
       const populationData: PopulationRow[] = [];
       
       for (const value of values) {
-        // Try different field combinations for population value
-        const populationValue = value.$ || value.value || value.VALUE;
-        if (!populationValue || isNaN(Number(populationValue))) continue;
-        
-        // Try different field combinations for prefecture code
-        const prefectureCode = value["@area"] || value["@cat01"] || value["@pref"];
-        if (!prefectureCode) continue;
-        
+        // Parse population value (documented: $ field contains the actual value)
+        const populationValue = value.$;
+        if (!populationValue || isNaN(Number(populationValue))) {
+          console.log("Skipping record: invalid population value", value);
+          continue;
+        }
+
+        // Parse prefecture code (documented: @cat01 for area code)
+        const prefectureCode = value["@cat01"];
+        if (!prefectureCode) {
+          console.log("Skipping record: missing prefecture code", value);
+          continue;
+        }
+
         // Check if this is one of our target prefectures
         const prefectureName = targetPrefectures.get(String(prefectureCode));
         if (!prefectureName) continue;
-        
+
         // For dataset 0000030003: only use total population (@cat04: T01)
         if (datasetId === "0000030003" && value["@cat04"] !== "T01") continue;
-        
-        // Try different field combinations for year
-        const yearValue = value["@time"] || value["@year"] || value.year || "2020";
-        const year = parseInt(String(yearValue).substring(0, 4)) || 2020;
-        
-        // Only include data from the last 5 years (2020-2024)
+
+        // Parse year (documented: @time field contains year)
+        const yearValue = value["@time"];
+        if (!yearValue) {
+          console.log("Skipping record: missing year", value);
+          continue;
+        }
+        const year = parseInt(String(yearValue).substring(0, 4));
+        if (isNaN(year) || year < 1900) {
+          console.log(`Skipping record: invalid year ${year}`, value);
+          continue;
+        }        // Only include data from the last 5 years (2020-2024)
         if (year < 2020) continue;
         
         // Only include our target prefectures
