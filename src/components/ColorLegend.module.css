@@ -38,11 +38,11 @@
 }
 
 .colorBlue {
-  background-color: #2196f3;
+  background-color: var(--color-blue);
 }
 .colorGreen {
-  background-color: #43a047;
+  background-color: var(--color-green);
 }
 .colorOrange {
-  background-color: #ff9800;
+  background-color: var(--color-orange);
 }
