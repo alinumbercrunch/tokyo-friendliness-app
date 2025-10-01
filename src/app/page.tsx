@@ -1,6 +1,8 @@
 import styles from "./page.module.css";
 import { Header } from "@/components/ui/Header";
 import OptimizationResults from "@/components/features/OptimizationResults";
+import PopulationTable from "@/components/features/PopulationTable";
+import ColorLegend from "@/components/ColorLegend";
 import { ValidationStatus } from "@/components/stats/ValidationStatus";
 import { CTASection } from "@/components/ui/CTASection";
 import { Footer } from "@/components/footer/Footer";
@@ -24,6 +26,12 @@ export default async function Home() {
             colorRankings: optimizationResults.colorRankings,
           }}
         />
+
+        {/* Group color legend (Japanese) */}
+        <ColorLegend />
+
+        {/* Population data table with friendliness-based grouping colors */}
+        <PopulationTable optimizationResults={optimizationResults} />
 
         {/* Validation status for optimization */}
         <ValidationStatus

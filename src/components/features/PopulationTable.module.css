@@ -1,0 +1,132 @@
+/* Population Table Styles */
+.container {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  margin-bottom: 1rem;
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.info {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  border-left: 4px solid #007bff;
+}
+
+.info p {
+  margin: 0.5rem 0;
+  color: #000;
+  font-size: 0.9rem;
+}
+
+.error {
+  padding: 1.5rem;
+  color: #000;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+}
+
+.noData {
+  padding: 1.5rem;
+  text-align: center;
+  color: #000;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+}
+
+.tableContainer {
+  overflow-x: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: white;
+  font-size: 0.875rem;
+}
+
+.tableHeader {
+  border: 1px solid #dee2e6;
+  padding: 12px 8px;
+  background-color: #f8f9fa;
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.tableRow:hover {
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.prefectureCell {
+  border: 1px solid #dee2e6;
+  padding: 8px 12px;
+  font-weight: bold;
+  text-align: left;
+  min-width: 100px;
+  position: sticky;
+  left: 0;
+  z-index: 5;
+}
+
+.yearCell {
+  border: 1px solid #dee2e6;
+  padding: 8px 12px;
+  font-weight: bold;
+  text-align: center;
+  min-width: 80px;
+  background-color: #f8f9fa;
+  color: #000;
+  position: sticky;
+  left: 0;
+  z-index: 5;
+}
+
+.tableCell {
+  border: 1px solid #dee2e6;
+  padding: 8px;
+  text-align: right;
+  font-family: monospace;
+  min-width: 80px;
+  color: #000;
+  font-weight: bold;
+}
+
+/* Group color backgrounds - using CSS custom properties */
+.goldGroup {
+  background-color: #2196f3; /* blue */
+}
+
+.silverGroup {
+  background-color: #43a047; /* green */
+}
+
+.bronzeGroup {
+  background-color: #ff9800; /* orange */
+}
+
+.footer {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #dee2e6;
+  color: #000;
+  font-size: 0.75rem;
+  text-align: center;
+  font-style: italic;
+}
