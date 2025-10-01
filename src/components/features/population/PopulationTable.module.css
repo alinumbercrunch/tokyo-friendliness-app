@@ -28,6 +28,15 @@
   font-size: 0.9rem;
 }
 
+.errorBoundary {
+  color: #b00020;
+  background: #fff0f0;
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 1rem 0;
+  font-weight: 500;
+}
+
 .error {
   padding: 1.5rem;
   color: #212529;

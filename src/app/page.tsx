@@ -2,11 +2,18 @@ import styles from "./page.module.css";
 import { Header } from "@/components/ui/header/Header";
 import OptimizationResults from "@/components/features/optimization/OptimizationResults";
 import PopulationTable from "@/components/features/population/PopulationTable";
+import { PopulationTableErrorBoundary } from "@/components/features/population/PopulationTableErrorBoundary";
 import ColorLegend from "@/components/features/color-system/ColorLegend";
 import { ValidationStatus } from "@/components/stats/ValidationStatus";
 import { CTASection } from "@/components/ui/cta-section/CTASection";
 import { performOptimization } from "@/lib/services/optimizationService";
 import { getBestPopulationData } from "@/lib/data/getStatsData";
+
+/**
+ * Home page (static, revalidated hourly)
+ * Handles optimization, data fetching, and error display.
+ * See error.tsx for server error handling.
+ */
 
 // Static generation: pre-build page with hourly updates
 // Note: Next.js requires literal values for segment configs, so we can't use CACHE_DURATION.PAGE_REVALIDATE here
@@ -46,11 +53,13 @@ export default async function Home() {
         <ColorLegend optimizationResults={optimizationResults} />
 
         {/* Population data table with friendliness-based grouping colors */}
-        <PopulationTable
-          optimizationResults={optimizationResults}
-          populationData={populationData}
-          error={populationError}
-        />
+        <PopulationTableErrorBoundary>
+          <PopulationTable
+            optimizationResults={optimizationResults}
+            populationData={populationData}
+            error={populationError}
+          />
+        </PopulationTableErrorBoundary>
 
         {/* Validation status for optimization */}
         <ValidationStatus
