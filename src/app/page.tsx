@@ -6,11 +6,26 @@ import ColorLegend from "@/components/features/ColorLegend";
 import { ValidationStatus } from "@/components/stats/ValidationStatus";
 import { CTASection } from "@/components/ui/CTASection";
 import { Footer } from "@/components/footer/Footer";
-import { performOptimization } from "@/lib/optimizationService";
+import { performOptimization } from "@/lib/services/optimizationService";
+
+// Static generation: pre-build page with hourly updates
+export const revalidate = 3600; // Regenerate every hour
+export const dynamic = "force-static"; // Force static generation
 
 export default async function Home() {
   // Perform heavy server-side optimization
   const optimizationResults = await performOptimization();
+  
+  // Fetch population data at page level (separation of concerns)
+  let populationData = null;
+  let populationError = null;
+  
+  try {
+    const { getBestPopulationData } = await import("@/lib/data/getStatsData");
+    populationData = await getBestPopulationData();
+  } catch (error) {
+    populationError = error instanceof Error ? error.message : "Failed to fetch population data";
+  }
 
   return (
     <div className={styles.page}>
@@ -31,7 +46,11 @@ export default async function Home() {
         <ColorLegend optimizationResults={optimizationResults} />
 
         {/* Population data table with friendliness-based grouping colors */}
-        <PopulationTable optimizationResults={optimizationResults} />
+        <PopulationTable 
+          optimizationResults={optimizationResults}
+          populationData={populationData}
+          error={populationError}
+        />
 
         {/* Validation status for optimization */}
         <ValidationStatus
