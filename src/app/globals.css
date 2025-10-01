@@ -1,12 +1,36 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* Color palette */
+  --color-blue: #2196f3;
+  --color-green: #43a047;
+  --color-orange: #ff9800;
+  
+  /* Gray scale */
+  --gray-alpha-200: rgba(0, 0, 0, 0.1);
+  --gray-light: #f8f9fa;
+  --gray-medium: #e9ecef;
+  --gray-dark: #6c757d;
+  
+  /* Common colors */
+  --border-color: #e0e0e0;
+  --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 18px rgba(0, 0, 0, 0.1);
+  
+  /* Text colors with fallbacks */
+  --text-primary: #212529;
+  --text-secondary: #6c757d;
+  --text-muted: #868e96;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --text-primary: #ededed;
+    --text-secondary: #adb5bd;
+    --text-muted: #868e96;
   }
 }
 
@@ -24,6 +48,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Ensure all text elements inherit proper color */
+h1, h2, h3, h4, h5, h6, p, span, div {
+  color: inherit;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -39,4 +68,29 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+/* Shared component styles */
+.card-container {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: var(--shadow-light);
+  border: 1px solid var(--border-color);
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--foreground);
+}
+
+.info-box {
+  padding: 1rem;
+  background-color: var(--gray-light);
+  border-radius: 4px;
+  border-left: 4px solid var(--color-blue);
+  margin-bottom: 1.5rem;
 }
