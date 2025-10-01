@@ -1,11 +1,10 @@
 import styles from "./page.module.css";
-import { Header } from "@/components/ui/Header";
-import OptimizationResults from "@/components/features/OptimizationResults";
-import PopulationTable from "@/components/features/PopulationTable";
-import ColorLegend from "@/components/features/ColorLegend";
+import { Header } from "@/components/ui/header/Header";
+import OptimizationResults from "@/components/features/optimization/OptimizationResults";
+import PopulationTable from "@/components/features/population/PopulationTable";
+import ColorLegend from "@/components/features/color-system/ColorLegend";
 import { ValidationStatus } from "@/components/stats/ValidationStatus";
-import { CTASection } from "@/components/ui/CTASection";
-import { Footer } from "@/components/footer/Footer";
+import { CTASection } from "@/components/ui/cta-section/CTASection";
 import { performOptimization } from "@/lib/services/optimizationService";
 import { getBestPopulationData } from "@/lib/data/getStatsData";
 
@@ -62,8 +61,6 @@ export default async function Home() {
         <CTASection />
       </main>
 
-      {/* App footer (customizable) */}
-      <Footer />
     </div>
   );
 }
