@@ -15,7 +15,9 @@
   font-weight: 500;
   font-family: inherit;
   cursor: pointer;
-  transition: background-color 0.25s, border-color 0.25s;
+  transition:
+    background-color 0.25s,
+    border-color 0.25s;
   text-decoration: none;
   display: flex;
   align-items: center;

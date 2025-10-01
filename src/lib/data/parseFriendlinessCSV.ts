@@ -1,7 +1,7 @@
 import path from "path";
 import { promises as fs } from "fs";
 import Papa from "papaparse";
-import type { FriendlinessMatrix } from "@/lib/types";
+import type { FriendlinessMatrix } from "@/lib/shared/types";
 
 // Constants
 const CSV_FILE_PATH = "src/lib/data/friendliness.csv";

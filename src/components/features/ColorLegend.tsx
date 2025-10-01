@@ -1,34 +1,55 @@
-import type { GroupColorRanking } from "@/lib/types";
+import type { OptimizationResult } from "@/lib/services/optimizationService";
+import { processGroupsWithScores } from "@/lib/ui-utils/colorLegendUtils";
 import styles from "./ColorLegend.module.css";
 
+/**
+ * Props for the ColorLegend component
+ */
 interface ColorLegendProps {
-  colorRankings: GroupColorRanking[];
-  title?: string;
+  /**
+   * Optimization results containing group rankings and scores
+   * Used to display group scores and determine color rankings
+   * Groups are automatically sorted by score (highest to lowest)
+   */
+  optimizationResults: OptimizationResult;
 }
 
-export default function ColorLegend({ colorRankings, title = "Group Rankings" }: ColorLegendProps) {
+/**
+ * Color Legend Component
+ * 
+ * Displays a visual legend showing the color coding system used throughout
+ * the application. Each group is shown with its corresponding color, name,
+ * and score points, sorted by score from highest to lowest.
+ * 
+ * Features:
+ * - Shows 3 friendship groups (グループ1, グループ2, グループ3)
+ * - Displays color swatches (blue, green, orange)
+ * - Shows point scores for each group
+ * - Automatically sorts groups by score (highest first)
+ * - Uses extracted utility functions for score processing
+ * - Graceful fallback scores when optimization data is unavailable
+ * 
+ * Color Mapping:
+ * - Blue: Typically highest scoring group
+ * - Green: Medium scoring group  
+ * - Orange: Lower scoring group
+ * 
+ * @param props - Component props
+ * @returns JSX element rendering the color legend with scores
+ */
+export default function ColorLegend({ optimizationResults }: ColorLegendProps) {
+  // Process groups using extracted utility function
+  const groupsWithScores = processGroupsWithScores(optimizationResults);
+
   return (
     <div className={styles.colorLegend}>
-      <h3 className={styles.title}>{title}</h3>
+      <h3 className={styles.title}>グループの色とポイント（高い順）</h3>
       <div className={styles.legendItems}>
-        {colorRankings.map((ranking) => (
-          <div key={ranking.groupIndex} className={styles.legendItem}>
-            <div
-              className={styles.colorSwatch}
-              style={{ "--color": ranking.hexColor } as React.CSSProperties}
-            />
-            <div className={styles.groupInfo}>
-              <span className={styles.medal}>
-                {ranking.colorRank === "gold" && "🥇"}
-                {ranking.colorRank === "silver" && "🥈"}
-                {ranking.colorRank === "bronze" && "🥉"}
-              </span>
-              <span className={styles.groupName}>Group {ranking.groupIndex + 1}</span>
-              <span className={styles.prefectures}>({ranking.prefectures.join(", ")})</span>
-              {ranking.groupScore > 0 && (
-                <span className={styles.score}>Score: {ranking.groupScore}</span>
-              )}
-            </div>
+        {groupsWithScores.map((group) => (
+          <div key={group.index} className={styles.legendItem}>
+            <div className={`${styles.colorBox} ${styles[group.color]}`} />
+            <span className={styles.groupName}>{group.name}</span>
+            <span className={styles.score}>{group.score} points</span>
           </div>
         ))}
       </div>

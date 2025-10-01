@@ -1,9 +1,9 @@
-import type { Partition, FriendlinessMap, DebugOptions, MemoResult } from "@/lib/types";
-import { DEFAULT_MAX_GROUPS } from "@/lib/types";
-import { validatePartitionInputs, validateFriendlinessMap } from "@/lib/validators";
-import { calculateMaxRemainingPotential, calculateIncrementalScore } from "@/lib/scoring";
-import { makeMemoKey } from "@/lib/memoization";
-import { deepCopy, sortPartition } from "@/lib/partitionUtils";
+import type { Partition, FriendlinessMap, DebugOptions, MemoResult } from "@/lib/shared/types";
+import { DEFAULT_MAX_GROUPS } from "@/lib/shared/types";
+import { validatePartitionInputs, validateFriendlinessMap } from "@/lib/shared/validators";
+import { calculateMaxRemainingPotential, calculateIncrementalScore } from "@/lib/algorithm/scoring";
+import { makeMemoKey } from "@/lib/algorithm/memoization";
+import { deepCopy, sortPartition } from "@/lib/algorithm/partitionUtils";
 
 // Re-export commonly used functions and types
 export {
@@ -18,8 +18,8 @@ export type {
   FriendlinessMap,
   FriendlinessMatrix,
   DebugOptions,
-} from "./types";
-export { DEFAULT_MAX_GROUPS } from "./types";
+} from "../shared/types";
+export { DEFAULT_MAX_GROUPS } from "../shared/types";
 
 /**
  * TOKYO FRIENDLINESS OPTIMIZATION ALGORITHM

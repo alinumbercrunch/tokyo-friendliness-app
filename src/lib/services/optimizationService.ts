@@ -1,11 +1,11 @@
-import { loadFriendlinessMatrix } from "@/lib/parseFriendlinessCSV";
+import { loadFriendlinessMatrix } from "@/lib/data/parseFriendlinessCSV";
 import {
   generateBestPartition,
   calculatePartitionScore,
   generatePartitions,
-} from "@/lib/optimizeGroups";
-import { colorTopGroupsByScore } from "@/lib/colorMap";
-import type { FriendlinessMap, GroupColorRanking } from "@/lib/types";
+} from "@/lib/algorithm/optimizeGroups";
+import { colorTopGroupsByScore } from "@/lib/ui/colorMap";
+import type { FriendlinessMap, GroupColorRanking } from "@/lib/shared/types";
 
 export interface OptimizationResult {
   bestPartition: string[][];

@@ -1,4 +1,4 @@
-import type { Partition } from "@/lib/types";
+import type { Partition } from "@/lib/shared/types";
 
 /**
  * Creates a deterministic memoization key for caching

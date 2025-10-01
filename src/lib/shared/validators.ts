@@ -1,4 +1,4 @@
-import type { FriendlinessMap } from "@/lib/types";
+import type { FriendlinessMap } from "@/lib/shared/types";
 
 /**
  * Validates that all prefectures exist in the friendliness map
