@@ -12,7 +12,14 @@ frontend:
     baseDirectory: .next
     files:
       - "**/*"
+    name: nextjs-app
   cache:
     paths:
       - node_modules/**/*
       - .next/cache/**/*
+backend:
+  phases:
+    build:
+      commands:
+        # Triggers Amplify SSR auto-detection for Next.js
+        - echo "No backend build required"
