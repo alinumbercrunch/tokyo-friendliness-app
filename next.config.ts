@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Required so Amplify detects and serves SSR correctly; removing this may cause 404s.
+  output: "standalone",
 };
 
 export default nextConfig;
