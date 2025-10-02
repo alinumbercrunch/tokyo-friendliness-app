@@ -21,4 +21,7 @@ backend:
   phases:
     build:
       commands:
-        - echo "No backend build required"
+        - echo "SSR build for Next.js"
+        - ls -la .next/
+compute:
+  type: server-side-rendering
