@@ -21,5 +21,7 @@ backend:
   phases:
     build:
       commands:
-        # Triggers Amplify SSR auto-detection for Next.js
-        - echo "No backend build required"
+        - echo "SSR build for Next.js"
+        - ls -la .next/
+compute:
+  type: server-side-rendering
