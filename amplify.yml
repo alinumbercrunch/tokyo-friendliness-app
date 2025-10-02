@@ -22,6 +22,5 @@ backend:
     build:
       commands:
         - echo "SSR build for Next.js"
-        - ls -la .next/
 compute:
   type: server-side-rendering
