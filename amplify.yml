@@ -17,11 +17,3 @@ frontend:
     paths:
       - node_modules/**/*
       - .next/cache/**/*
-backend:
-  phases:
-    build:
-      commands:
-        - echo "SSR build for Next.js"
-        - ls -la .next/
-compute:
-  type: server-side-rendering
