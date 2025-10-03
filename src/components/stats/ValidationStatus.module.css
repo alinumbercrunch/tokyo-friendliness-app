@@ -1,4 +1,6 @@
 .validation {
+  --success-color: #22c55e;
+  --warning-color: #f59e0b;
   margin: 2rem 0;
   padding: 1.5rem;
   border-radius: 12px;
@@ -8,21 +10,22 @@
 }
 
 .success {
-  color: #22c55e;
+  color: var(--success-color);
   font-weight: 600;
   font-size: 1.1rem;
   margin: 0 0 0.5rem 0;
 }
 
 .warning {
-  color: #f59e0b;
+  color: var(--warning-color);
   font-weight: 600;
   font-size: 1.1rem;
   margin: 0 0 0.5rem 0;
 }
 
 .info {
-  color: #6c757d;
+  color: var(--success-color);
+  font-weight: 600;
   margin: 0;
   font-size: 0.95rem;
 }

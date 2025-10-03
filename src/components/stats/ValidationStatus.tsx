@@ -42,12 +42,22 @@ export function ValidationStatus({ isOptimal, totalPartitions }: ValidationStatu
   return (
     <div className={styles.validation}>
       {isOptimal ? (
-        <p className={styles.success}>✅ Algorithm found the optimal solution!</p>
+        <p className={styles.success}>
+          ✅ Algorithm found the optimal solution!
+          <br />
+          <span lang="ja">✅ 最適な解を発見！</span>
+        </p>
       ) : (
-        <p className={styles.warning}>⚠️ Algorithm may not have found the optimal solution</p>
+        <p className={styles.warning}>
+          ⚠️ Algorithm may not have found the optimal solution
+          <br />
+          <span lang="ja">⚠️ 最適な解が見つからなかった可能性があります</span>
+        </p>
       )}
       <p className={styles.info}>
         Validated against {totalPartitions.toLocaleString()} possible combinations
+        <br />
+        <span lang="ja">検証された組み合わせの総数: {totalPartitions.toLocaleString()}</span>
       </p>
     </div>
   );
