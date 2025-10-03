@@ -104,14 +104,16 @@ graph TD
 
 ## Tech Stack
 
-![Next.js](https://img.shields.io/badge/Next.js-000?logo=nextdotjs&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178c6?logo=typescript&logoColor=white)
-![React](https://img.shields.io/badge/React-20232a?logo=react&logoColor=61dafb)
-![CSS Modules](https://img.shields.io/badge/CSS%20Modules-264de4?logo=css3&logoColor=white)
-![AWS Amplify](https://img.shields.io/badge/AWS%20Amplify-ff9900?logo=amazon-aws&logoColor=white)
-![PapaParse](https://img.shields.io/badge/PapaParse-4b8bbe?logo=data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwIiBoZWlnaHQ9IjE2IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTIgM2MtNS4yMyAwLTkgNC4yNy05IDkgMCA1LjI0IDQuMjcgOSA5IDkgNS4yNCAwIDktNC4yNiA5LTkgMC01LjczLTQuMjYtOS05LTk6bTAgMTZjLTMuODMgMC03LTMuMTcT7LTctNyA3IDAgMy44My0zLjE3IDctNyA3eiIvPjwvc3ZnPg==)
-![ESLint](https://img.shields.io/badge/ESLint-4b32c3?logo=eslint&logoColor=white)
-![Prettier](https://img.shields.io/badge/Prettier-f7b93e?logo=prettier&logoColor=white)
-![Mermaid](https://img.shields.io/badge/Mermaid-41b883?logo=mermaid&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-000?logo=nextdotjs&logoColor=white" height="40"/>
+  <img src="https://img.shields.io/badge/TypeScript-3178c6?logo=typescript&logoColor=white" height="40"/>
+  <img src="https://img.shields.io/badge/React-20232a?logo=react&logoColor=61dafb" height="40"/>
+  <img src="https://img.shields.io/badge/CSS%20Modules-264de4?logo=css3&logoColor=white" height="40"/>
+  <img src="https://img.shields.io/badge/AWS%20Amplify-ff9900?logo=amazon-aws&logoColor=white" height="40"/>
+  <img src="https://img.shields.io/badge/PapaParse-4b8bbe?logo=data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwIiBoZWlnaHQ9IjE2IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTIgM2MtNS4yMyAwLTkgNC4yNy05IDkgMCA1LjI0IDQuMjcgOSA5IDkgNS4yNCAwIDktNC4yNiA5LTkgMC01LjczLTQuMjYtOS05LTk6bTAgMTZjLTMuODMgMC03LTMuMTcT7LTctNyA3IDAgMy44My0zLjE3IDctNyA3eiIvPjwvc3ZnPg==" height="40"/>
+  <img src="https://img.shields.io/badge/ESLint-4b32c3?logo=eslint&logoColor=white" height="40"/>
+  <img src="https://img.shields.io/badge/Prettier-f7b93e?logo=prettier&logoColor=white" height="40"/>
+  <img src="https://img.shields.io/badge/Mermaid-41b883?logo=mermaid&logoColor=white" height="40"/>
+  <img src="https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white" height="40"/>
+  <img src="https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white" height="40"/>
+</p>
