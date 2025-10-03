@@ -24,6 +24,3 @@ backend:
         - echo "SSR build for Next.js"
 compute:
   type: server-side-rendering
-  environments:
-    - name: ESTAT_APP_ID
-      value: $ESTAT_APP_ID
