@@ -3,7 +3,6 @@ import { logger } from "@/lib/shared/logger";
 import { cache } from "react";
 
 const ESTAT_BASE_URL = "https://api.e-stat.go.jp/rest/3.0/app";
-const ESTAT_APP_ID = process.env.ESTAT_APP_ID;
 
 // Constants for data filtering
 const MIN_YEAR = 2020; // Only include data from the last 5 years
@@ -39,16 +38,21 @@ const FALLBACK_DATA: PopulationRow[] = [
 ];
 
 // Validate environment variable on module load
-if (!ESTAT_APP_ID) {
-  logger.error("ESTAT_APP_ID environment variable is required but not found");
-  throw new Error(
-    "ESTAT_APP_ID environment variable is required. Please check your .env.local file."
-  );
+function validateEstatAppId(): string {
+  const appId = process.env.ESTAT_APP_ID;
+  if (!appId) {
+    logger.error("ESTAT_APP_ID environment variable is required but not found");
+    throw new Error(
+      "ESTAT_APP_ID environment variable is required. Please check your .env.local file."
+    );
+  }
+  return appId;
 }
 
 // Helper function to build API URL
 function buildApiUrl(datasetId: string): string {
-  return `${ESTAT_BASE_URL}/json/getStatsData?appId=${ESTAT_APP_ID}&lang=J&statsDataId=${datasetId}&limit=${MAX_API_LIMIT}`;
+  const appId = validateEstatAppId();
+  return `${ESTAT_BASE_URL}/json/getStatsData?appId=${appId}&lang=J&statsDataId=${datasetId}&limit=${MAX_API_LIMIT}`;
 }
 
 // Helper function to parse a single data value from e-Stat response
