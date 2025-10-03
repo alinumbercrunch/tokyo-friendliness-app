@@ -22,6 +22,8 @@
   --text-primary: #212529;
   --text-secondary: #6c757d;
   --text-muted: #868e96;
+
+  --card-background: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -83,7 +85,7 @@ a {
   margin: 2rem 0;
   padding: 1.5rem;
   border-radius: 8px;
-  background-color: white;
+  background-color: var(--card-background);
   box-shadow: var(--shadow-light);
   border: 1px solid var(--border-color);
 }

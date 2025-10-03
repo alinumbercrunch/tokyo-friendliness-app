@@ -1,6 +1,21 @@
 .colorLegend {
-  background: #f8f9fa;
-  border: 1px solid #e9ecef;
+  --legend-background: #f8f9fa;
+  --legend-border-color: #e9ecef;
+  --title-color: #212529;
+  --item-background: white;
+  --item-border-color: #dee2e6;
+  --swatch-border-color: #fff;
+  --swatch-box-shadow-color: rgba(0, 0, 0, 0.1);
+  --group-name-color: #212529;
+  --prefectures-color: #6c757d;
+  --score-color: #495057;
+  --color-box-border-color: #ddd;
+  --blue: #2196f3;
+  --green: #43a047;
+  --orange: #ff9800;
+
+  background: var(--legend-background);
+  border: 1px solid var(--legend-border-color);
   border-radius: 8px;
   padding: 1rem;
   margin: 1rem 0;
@@ -10,7 +25,7 @@
   margin: 0 0 1rem 0;
   font-size: 1.2rem;
   font-weight: 600;
-  color: #212529;
+  color: var(--title-color);
 }
 
 .legendItems {
@@ -24,17 +39,17 @@
   align-items: center;
   gap: 0.75rem;
   padding: 0.5rem;
-  background: white;
+  background: var(--item-background);
   border-radius: 6px;
-  border: 1px solid #dee2e6;
+  border: 1px solid var(--item-border-color);
 }
 
 .colorSwatch {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  border: 2px solid #fff;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--swatch-border-color);
+  box-shadow: 0 0 0 1px var(--swatch-box-shadow-color);
   flex-shrink: 0;
   background-color: var(--color);
 }
@@ -52,17 +67,17 @@
 
 .groupName {
   font-weight: 600;
-  color: #212529;
+  color: var(--group-name-color);
 }
 
 .prefectures {
-  color: #6c757d;
+  color: var(--prefectures-color);
   font-size: 0.9rem;
 }
 
 .score {
   margin-left: auto;
-  color: #495057;
+  color: var(--score-color);
   font-size: 0.9rem;
   font-weight: 500;
 }
@@ -71,18 +86,18 @@
   width: 20px;
   height: 20px;
   border-radius: 4px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--color-box-border-color);
   flex-shrink: 0;
 }
 
 .blue {
-  background-color: #2196f3;
+  background-color: var(--blue);
 }
 
 .green {
-  background-color: #43a047;
+  background-color: var(--green);
 }
 
 .orange {
-  background-color: #ff9800;
+  background-color: var(--orange);
 }
