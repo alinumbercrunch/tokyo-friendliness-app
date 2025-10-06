@@ -72,6 +72,11 @@ This app is deployed online via AWS Amplify:
 ```mermaid
 graph TD
 
+  Dev[Developer] -->|push| GH[GitHub]
+  GH -->|trigger| CI[ci.yml / GitHub Actions]
+  CI -->|deploy| Amplify[AWS Amplify<br>デプロイ]
+  Amplify -->|serve| UI[アプリ画面 App Interface]
+
   A[CSVファイル friendliness.csv] -->|data| B[parseFriendlinessCSV.ts と CSV解析]
   B -->|build| C[optimizationService.ts と FriendlinessMap生成]
   C -->|use| D[最適化アルゴリズム Optimization Algorithm]
@@ -81,7 +86,7 @@ graph TD
   G[e-Stat API 政府統計] -->|population| H[getStatsData.ts と 人口データ取得・フィルタ]
   H -->|link| F
 
-  F -->|display| UI[アプリ画面 App Interface]
+  F -->|display| UI
 
   subgraph DataSources[Data Sources]
     A
