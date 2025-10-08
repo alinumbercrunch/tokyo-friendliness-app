@@ -1,3 +1,7 @@
+/**
+ * Debug API endpoint (development only)
+ * Provides environment and application status for debugging purposes.
+ */
 import { NextResponse } from "next/server";
 
 export async function GET() {

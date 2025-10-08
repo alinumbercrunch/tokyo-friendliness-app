@@ -1,11 +1,4 @@
-import styles from "./page.module.css";
-import { Header } from "@/components/ui/header/Header";
-import OptimizationResults from "@/components/features/optimization/OptimizationResults";
-import PopulationTable from "@/components/features/population/PopulationTable";
-import { PopulationTableErrorBoundary } from "@/components/features/population/PopulationTableErrorBoundary";
-import ColorLegend from "@/components/features/color-system/ColorLegend";
-import { ValidationStatus } from "@/components/stats/ValidationStatus";
-import { CTASection } from "@/components/ui/cta-section/CTASection";
+import LandingPage from "@/features/landing-page/LandingPage";
 import { performOptimization } from "@/lib/services/optimizationService";
 import { getBestPopulationData } from "@/lib/data/getStatsData";
 
@@ -35,41 +28,10 @@ export default async function Home() {
   }
 
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        {/* App header and description */}
-        <Header />
-
-        {/* Main optimization results summary */}
-        <OptimizationResults
-          initialResults={{
-            bestPartition: optimizationResults.bestPartition,
-            totalScore: optimizationResults.totalScore,
-            colorRankings: optimizationResults.colorRankings,
-          }}
-        />
-
-        {/* Group color legend (Japanese) */}
-        <ColorLegend optimizationResults={optimizationResults} />
-
-        {/* Population data table with friendliness-based grouping colors */}
-        <PopulationTableErrorBoundary>
-          <PopulationTable
-            optimizationResults={optimizationResults}
-            populationData={populationData}
-            error={populationError}
-          />
-        </PopulationTableErrorBoundary>
-
-        {/* Validation status for optimization */}
-        <ValidationStatus
-          isOptimal={optimizationResults.isOptimal}
-          totalPartitions={optimizationResults.validationDetails.totalPartitions}
-        />
-
-        {/* Call-to-action section (customizable) */}
-        <CTASection />
-      </main>
-    </div>
+    <LandingPage
+      optimizationResults={optimizationResults}
+      populationData={populationData}
+      populationError={populationError}
+    />
   );
 }

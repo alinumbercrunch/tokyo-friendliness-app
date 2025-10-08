@@ -1,9 +1,4 @@
-/**
- * Color Legend Utilities
- *
- * Utility functions for processing and formatting group data for the ColorLegend component.
- * Handles score extraction, group processing, and sorting logic.
- */
+// Color Legend Utilities for ColorLegend component
 
 import type { OptimizationResult } from "@/lib/services/optimizationService";
 
@@ -33,10 +28,7 @@ const DEFAULT_GROUPS = [
 
 import { UI_DEFAULTS } from "@/lib/shared/constants";
 
-/**
- * Fallback scores used when optimization results are not available
- * Provides reasonable default scores for demonstration purposes
- */
+// Fallback scores for when optimization results are not available
 const FALLBACK_SCORES = UI_DEFAULTS.FALLBACK_GROUP_SCORES;
 
 /**

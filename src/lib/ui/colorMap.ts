@@ -1,3 +1,6 @@
+/**
+ * Utility functions for mapping groups to colors.
+ */
 import type { GroupColor, GroupColorRanking, Partition, FriendlinessMap } from "@/lib/shared/types";
 
 // Fixed group colors

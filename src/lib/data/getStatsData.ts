@@ -1,3 +1,7 @@
+/**
+ * Fetches population data from the e-Stat API.
+ * Handles API errors, caching, and fallback data.
+ */
 import { PopulationRow, EStatResponse, EStatDataValue } from "@/lib/data/estatTypes";
 import { logger } from "@/lib/shared/logger";
 import { cache } from "react";

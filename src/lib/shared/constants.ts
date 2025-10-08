@@ -1,9 +1,4 @@
-/**
- * Application Constants
- *
- * Centralized configuration constants used throughout the application.
- * Prefer importing these over hardcoded values for maintainability.
- */
+// Application Constants
 
 // Cache and Performance Constants
 export const CACHE_DURATION = {
@@ -15,7 +10,7 @@ export const CACHE_DURATION = {
 
 // UI and Display Constants
 export const UI_DEFAULTS = {
-  /** Default fallback scores for groups when optimization data unavailable */
+  // Default fallback scores for groups when optimization data unavailable
   FALLBACK_GROUP_SCORES: [45, 30, 25] as const,
   /** Maximum number of optimization groups */
   MAX_GROUPS: 3,

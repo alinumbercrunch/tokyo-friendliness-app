@@ -1,63 +1,44 @@
 import styles from "./ValidationStatus.module.css";
+import {
+  OPTIMAL_SOLUTION_MESSAGE,
+  OPTIMAL_SOLUTION_MESSAGE_JA,
+  NOT_OPTIMAL_SOLUTION_MESSAGE,
+  NOT_OPTIMAL_SOLUTION_MESSAGE_JA,
+  VALIDATED_AGAINST_PREFIX,
+  VALIDATED_AGAINST_SUFFIX,
+  VALIDATED_AGAINST_JA,
+} from "./constants";
 
-/**
- * Props for the ValidationStatus component
- */
 interface ValidationStatusProps {
-  /**
-   * Whether the optimization algorithm found the optimal solution
-   * When true, displays success message; when false, shows warning
-   */
   isOptimal: boolean;
-
-  /**
-   * Total number of possible partition combinations that were validated against
-   * Used to show the scale of the optimization problem solved
-   */
   totalPartitions: number;
 }
-
-/**
- * Validation Status Component
- *
- * Displays the validation status of the optimization algorithm results.
- * Shows whether the algorithm successfully found the optimal solution and
- * provides context about the scale of the problem by showing the total
- * number of possible combinations evaluated.
- *
- * Features:
- * - Success/warning indicator with appropriate emoji and styling
- * - Shows scale of optimization problem (total combinations)
- * - Formatted number display with thousands separators
- * - Clear messaging about algorithm performance
- *
- * Visual States:
- * - ✅ Success: When optimal solution is found
- * - ⚠️ Warning: When algorithm may not have found optimal solution
- *
- * @param props - Component props
- * @returns JSX element rendering the validation status
- */
+// Validation Status Component
 export function ValidationStatus({ isOptimal, totalPartitions }: ValidationStatusProps) {
   return (
     <div className={styles.validation}>
       {isOptimal ? (
         <p className={styles.success}>
-          ✅ Algorithm found the optimal solution!
+          {OPTIMAL_SOLUTION_MESSAGE}
           <br />
-          <span lang="ja">✅ 最適な解を発見！</span>
+          <span lang="ja">{OPTIMAL_SOLUTION_MESSAGE_JA}</span>
         </p>
       ) : (
         <p className={styles.warning}>
-          ⚠️ Algorithm may not have found the optimal solution
+          {NOT_OPTIMAL_SOLUTION_MESSAGE}
           <br />
-          <span lang="ja">⚠️ 最適な解が見つからなかった可能性があります</span>
+          <span lang="ja">{NOT_OPTIMAL_SOLUTION_MESSAGE_JA}</span>
         </p>
       )}
       <p className={styles.info}>
-        Validated against {totalPartitions.toLocaleString()} possible combinations
+        {VALIDATED_AGAINST_PREFIX}
+        {totalPartitions.toLocaleString()}
+        {VALIDATED_AGAINST_SUFFIX}
         <br />
-        <span lang="ja">検証された組み合わせの総数: {totalPartitions.toLocaleString()}</span>
+        <span lang="ja">
+          {VALIDATED_AGAINST_JA}
+          {totalPartitions.toLocaleString()}
+        </span>
       </p>
     </div>
   );

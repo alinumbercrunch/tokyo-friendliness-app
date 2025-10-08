@@ -1,9 +1,4 @@
-/**
- * Population Data Hook
- *
- * Custom React hook for fetching and managing population data from the e-Stat API.
- * Provides a clean separation between data fetching logic and UI components.
- */
+// Population Data Hook for fetching and managing population data from the e-Stat API
 
 "use client";
 
@@ -11,43 +6,26 @@ import { useState, useEffect } from "react";
 import type { PopulationRow } from "@/lib/data/estatTypes";
 import { getBestPopulationData } from "@/lib/data/getStatsData";
 import { logger } from "@/lib/shared/logger";
+import {
+  FETCHING_POPULATION_DATA_MESSAGE,
+  NO_POPULATION_DATA_FOUND_MESSAGE,
+  UNKNOWN_ERROR_MESSAGE,
+  FAILED_TO_FETCH_POPULATION_DATA_MESSAGE,
+} from "./constants";
 
 /**
  * Return type for the usePopulationData hook
  */
 interface UsePopulationDataResult {
-  /** Population data array, null if not loaded or error occurred */
+  // Population data array, null if not loaded or error occurred
   data: PopulationRow[] | null;
-  /** Error message if data fetching failed, null if no error */
+  // Error message if data fetching failed, null if no error
   error: string | null;
-  /** Loading state indicator, true while fetching data */
+  // Loading state indicator, true while fetching data
   loading: boolean;
 }
 
-/**
- * Custom hook for fetching population data from e-Stat API
- *
- * Encapsulates the data fetching logic and state management for population data.
- * Automatically fetches data on component mount and handles loading, error, and success states.
- *
- * Features:
- * - Automatic data fetching on hook initialization
- * - Loading state management
- * - Error handling with user-friendly messages
- * - Logging for debugging and monitoring
- * - Clean state management with proper cleanup
- *
- * Usage:
- * ```tsx
- * const { data, error, loading } = usePopulationData();
- *
- * if (loading) return <LoadingComponent />;
- * if (error) return <ErrorComponent error={error} />;
- * if (data) return <DataComponent data={data} />;
- * ```
- *
- * @returns Object containing data, error, and loading states
- */
+// Custom hook for fetching population data from e-Stat API
 export function usePopulationData(): UsePopulationDataResult {
   const [data, setData] = useState<PopulationRow[] | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -56,18 +34,18 @@ export function usePopulationData(): UsePopulationDataResult {
   useEffect(() => {
     async function fetchData() {
       try {
-        logger.info("Fetching population data from e-Stat API");
+        logger.info(FETCHING_POPULATION_DATA_MESSAGE);
         const result = await getBestPopulationData();
 
         if (!result || result.length === 0) {
-          throw new Error("No population data found");
+          throw new Error(NO_POPULATION_DATA_FOUND_MESSAGE);
         }
 
         setData(result);
         setError(null);
       } catch (err) {
-        const errorMessage = err instanceof Error ? err.message : "Unknown error occurred";
-        logger.error("Failed to fetch population data from e-Stat API", {
+        const errorMessage = err instanceof Error ? err.message : UNKNOWN_ERROR_MESSAGE;
+        logger.error(FAILED_TO_FETCH_POPULATION_DATA_MESSAGE, {
           error: errorMessage,
           timestamp: new Date().toISOString(),
         });
