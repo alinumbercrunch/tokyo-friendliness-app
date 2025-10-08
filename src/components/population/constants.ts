@@ -14,5 +14,6 @@ export const TOTAL_SCORE_LABEL = "友好度合計スコア: ";
 export const YEAR_HEADER = "西暦";
 export const YEAR_UNIT = "年";
 export const FOOTER_TEXT = "データ提供: e-Stat (政府統計の総合窓口) | 色分け: 友好度最適化グループ";
-export const POPULATION_TABLE_ERROR_BOUNDARY_MESSAGE = "An error occurred while displaying the population table.";
+export const POPULATION_TABLE_ERROR_BOUNDARY_MESSAGE =
+  "An error occurred while displaying the population table.";
 export const LOADING_MESSAGE = "データを読み込み中...";

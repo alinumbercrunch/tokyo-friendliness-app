@@ -90,9 +90,7 @@ export default function PopulationTable({
   }
 
   // Get unique years and prefectures from populationData
-  const years = [...new Set(populationData.map((row) => row.year))].sort(
-    (a, b) => b - a
-  ); // Descending order (newer first)
+  const years = [...new Set(populationData.map((row) => row.year))].sort((a, b) => b - a); // Descending order (newer first)
 
   // Get prefectures sorted by population in descending order (highest population first)
   const prefecturePopulations = populationData.reduce(
@@ -112,9 +110,7 @@ export default function PopulationTable({
 
   // Function to get population for a specific prefecture and year
   const getPopulation = (prefecture: string, year: number) => {
-    const row = populationData.find(
-      (d) => d.prefecture === prefecture && d.year === year
-    );
+    const row = populationData.find((d) => d.prefecture === prefecture && d.year === year);
     return row ? row.population.toLocaleString() : NO_DATA_SYMBOL;
   };
 
@@ -123,11 +119,7 @@ export default function PopulationTable({
     // Find which group this prefecture belongs to
     for (let i = 0; i < optimizationResults.bestPartition.length; i++) {
       if (optimizationResults.bestPartition[i].includes(prefecture)) {
-        const groupColors = [
-          GOLD_GROUP_CLASS,
-          SILVER_GROUP_CLASS,
-          BRONZE_GROUP_CLASS,
-        ];
+        const groupColors = [GOLD_GROUP_CLASS, SILVER_GROUP_CLASS, BRONZE_GROUP_CLASS];
         return groupColors[i] || BRONZE_GROUP_CLASS;
       }
     }
@@ -159,9 +151,7 @@ export default function PopulationTable({
               {prefectures.map((prefecture) => (
                 <th
                   key={prefecture}
-                  className={`${styles.tableHeader} ${
-                    styles[getGroupClass(prefecture)]
-                  }`}
+                  className={`${styles.tableHeader} ${styles[getGroupClass(prefecture)]}`}
                 >
                   <strong>{prefecture}</strong>
                 </th>
@@ -180,9 +170,7 @@ export default function PopulationTable({
                 {prefectures.map((prefecture) => (
                   <td
                     key={`${year}-${prefecture}`}
-                    className={`${styles.tableCell} ${
-                      styles[getGroupClass(prefecture)]
-                    }`}
+                    className={`${styles.tableCell} ${styles[getGroupClass(prefecture)]}`}
                   >
                     {getPopulation(prefecture, year)}
                   </td>
@@ -199,4 +187,3 @@ export default function PopulationTable({
     </div>
   );
 }
-
