@@ -58,8 +58,6 @@ This app is deployed online via AWS Amplify:
 - Environment variables securely managed
   環境変数を安全に管理
 
----
-
 ## ✅ Lighthouse Audit Summary
 
 - **Performance**: 83
@@ -84,7 +82,7 @@ Chrome DevToolsのLighthouseを使用して監査を実施しました。
 アクセシビリティ、SEO、ベストプラクティスにおいて満点を獲得しており、技術的に非常に高品質なアプリです。
 パフォーマンスも高水準であり、軽微な最適化でさらに向上可能です。
 
-<img width="487" height="660" alt="Lighthouse result" src="https://github.com/user-attachments/assets/1d6c2556-0357-4c7b-8b85-350695f9ddb3" />
+<img width="487" height="660" alt="Lighthouse result" src="public/Lighthouse-result.png" />
 
 ## Architecture Flowchart
 
