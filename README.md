@@ -34,31 +34,31 @@ This optimization is achieved using an **advanced combinatorial optimization alg
 
 ## Quick Start
 
-1. Clone this repository  
+1. Clone this repository
    このリポジトリをクローン（複製）します。
-2. Run `npm install` to install dependencies  
+2. Run `npm install` to install dependencies
    依存パッケージをインストールするために **`npm install`** を実行します。
-3. Run `npm run dev` to start the development server  
+3. Run `npm run dev` to start the development server
    開発サーバーを起動するために **`npm run dev`** を実行します。
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.  
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 ブラウザで **[http://localhost:3000](http://localhost:3000)** を開くと、アプリの動作を確認できます。
 
 ## Deployment
 
-This app is deployed online via AWS Amplify:  
+This app is deployed online via AWS Amplify:
 このアプリは AWS Amplify を利用してオンラインで公開されています。
 
 **[https://chore-enable-ssr-compute.d20y2f4xdero1h.amplifyapp.com/](https://chore-enable-ssr-compute.d20y2f4xdero1h.amplifyapp.com/)**
 
-- Automatic builds from the SSR compute branch  
+- Automatic builds from the SSR compute branch
   SSR computeブランチからの自動ビルド
-- SSR and static content supported  
+- SSR and static content supported
   SSR（サーバーサイドレンダリング）と静的コンテンツの両方に対応
-- Environment variables securely managed  
+- Environment variables securely managed
   環境変数を安全に管理
 
-  ***
+---
 
 ## ✅ Lighthouse Audit Summary
 
@@ -67,8 +67,8 @@ This app is deployed online via AWS Amplify:
 - **Best Practices**: 100
 - **SEO**: 100
 
-This audit was conducted using Chrome DevTools Lighthouse.  
-The app demonstrates strong technical quality, with perfect scores in accessibility, SEO, and best practices.  
+This audit was conducted using Chrome DevTools Lighthouse.
+The app demonstrates strong technical quality, with perfect scores in accessibility, SEO, and best practices.
 Performance is already high and can be further improved with minor optimizations.
 
 ---
@@ -80,8 +80,8 @@ Performance is already high and can be further improved with minor optimizations
 - **ベストプラクティス**: 100
 - **SEO**: 100
 
-Chrome DevToolsのLighthouseを使用して監査を実施しました。  
-アクセシビリティ、SEO、ベストプラクティスにおいて満点を獲得しており、技術的に非常に高品質なアプリです。  
+Chrome DevToolsのLighthouseを使用して監査を実施しました。
+アクセシビリティ、SEO、ベストプラクティスにおいて満点を獲得しており、技術的に非常に高品質なアプリです。
 パフォーマンスも高水準であり、軽微な最適化でさらに向上可能です。
 
 <img width="487" height="660" alt="Lighthouse result" src="https://github.com/user-attachments/assets/1d6c2556-0357-4c7b-8b85-350695f9ddb3" />
@@ -120,11 +120,14 @@ graph TD
     H
   end
 
+
   subgraph OutputSection[Output]
     F
     UI
   end
 ```
+
+---
 
 ## Tech Stack
 
