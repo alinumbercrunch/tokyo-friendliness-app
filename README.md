@@ -34,58 +34,53 @@ This optimization is achieved using an **advanced combinatorial optimization alg
 
 ## Quick Start
 
-1. Clone this repository  
+1. Clone this repository
    このリポジトリをクローン（複製）します。
-2. Run `npm install` to install dependencies  
+2. Run `npm install` to install dependencies
    依存パッケージをインストールするために **`npm install`** を実行します。
-3. Run `npm run dev` to start the development server  
+3. Run `npm run dev` to start the development server
    開発サーバーを起動するために **`npm run dev`** を実行します。
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.  
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 ブラウザで **[http://localhost:3000](http://localhost:3000)** を開くと、アプリの動作を確認できます。
 
 ## Deployment
 
-This app is deployed online via AWS Amplify:  
+This app is deployed online via AWS Amplify:
 このアプリは AWS Amplify を利用してオンラインで公開されています。
 
 **[https://chore-enable-ssr-compute.d20y2f4xdero1h.amplifyapp.com/](https://chore-enable-ssr-compute.d20y2f4xdero1h.amplifyapp.com/)**
 
-- Automatic builds from the SSR compute branch  
+- Automatic builds from the SSR compute branch
   SSR computeブランチからの自動ビルド
-- SSR and static content supported  
+- SSR and static content supported
   SSR（サーバーサイドレンダリング）と静的コンテンツの両方に対応
-- Environment variables securely managed  
+- Environment variables securely managed
   環境変数を安全に管理
-
-  ---
 
 ## ✅ Lighthouse Audit Summary
 
-- **Performance**: 83
+- **Performance**: 100
 - **Accessibility**: 100
 - **Best Practices**: 100
 - **SEO**: 100
 
-This audit was conducted using Chrome DevTools Lighthouse.  
-The app demonstrates strong technical quality, with perfect scores in accessibility, SEO, and best practices.  
-Performance is already high and can be further improved with minor optimizations.
+This audit was conducted using Chrome DevTools Lighthouse.
+The app demonstrates strong technical quality, with perfect scores in accessibility, SEO, and best practices.
 
 ---
 
 ## ✅ Lighthouse監査サマリー
 
-- **パフォーマンス**: 83
+- **パフォーマンス**: 100
 - **アクセシビリティ**: 100
 - **ベストプラクティス**: 100
 - **SEO**: 100
 
-Chrome DevToolsのLighthouseを使用して監査を実施しました。  
-アクセシビリティ、SEO、ベストプラクティスにおいて満点を獲得しており、技術的に非常に高品質なアプリです。  
-パフォーマンスも高水準であり、軽微な最適化でさらに向上可能です。
+Chrome DevToolsのLighthouseを使用して監査を実施しました。
+アクセシビリティ、SEO、ベストプラクティスにおいて満点を獲得しており、技術的に非常に高品質なアプリです。
 
-<img width="487" height="660" alt="Lighthouse result" src="https://github.com/user-attachments/assets/1d6c2556-0357-4c7b-8b85-350695f9ddb3" />
-
+<img width="487" height="660" alt="Lighthouse result" src="public/Lighthouse-result.png" />
 
 ## Architecture Flowchart
 
@@ -121,11 +116,14 @@ graph TD
     H
   end
 
+
   subgraph OutputSection[Output]
     F
     UI
   end
 ```
+
+---
 
 ## Tech Stack
 
@@ -135,7 +133,7 @@ graph TD
   <img src="https://img.shields.io/badge/React-20232a?logo=react&logoColor=61dafb" height="40"/>
   <img src="https://img.shields.io/badge/CSS%20Modules-264de4?logo=css3&logoColor=white" height="40"/>
   <img src="https://img.shields.io/badge/AWS%20Amplify-ff9900?logo=amazon-aws&logoColor=white" height="40"/>
-  <img src="https://img.shields.io/badge/PapaParse-4b8bbe?logo=data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwIiBoZWlnaHQ9IjE2IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTIgM2MtNS4yMyAwLTkgNC4yNy05IDkgMCA1LjI0IDQuMjcgOSA5IDkgNS4yNCAwIDktNC4yNiA5LTkgMC01LjczLTQuMjYtOS05LTk6bTAgMTZjLTMuODMgMC03LTMuMTcT7LTctNyA3IDAgMy44My0zLjE3IDctNyA3eiIvPjwvc3ZnPg==" height="40"/>
+  <img src="https://img.shields.io/badge/PapaParse-4b8bbe?logo=data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwIiBoZWlnaHQ9IjE2IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTIgM2MtNS4yMyAwLTkgNC4yNy05IDkgMCA1LjI0IDQuMjcgOSA5IDkgNS4yNCAwIDktNC4yNiA5LTkgMC01LjczLTQuMjYtOS05LTk6bTAgMTZjLTMuODMgMC03LTMuMTctNy03IDAgMy44My0zLjE3IDctNyA3eiIvPjwvc3ZnPg==" height="40"/>
   <img src="https://img.shields.io/badge/ESLint-4b32c3?logo=eslint&logoColor=white" height="40"/>
   <img src="https://img.shields.io/badge/Prettier-f7b93e?logo=prettier&logoColor=white" height="40"/>
   <img src="https://img.shields.io/badge/Mermaid-41b883?logo=mermaid&logoColor=white" height="40"/>

@@ -27,6 +27,21 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Print Prettier version
+        run: npx prettier --version
+
+      - name: Check README.md encoding
+        run: file README.md
+
+      - name: Show Prettier diff for README.md
+        run: |
+          npx prettier --write README.md
+          git diff README.md
+
+      - name: Show README.md line endings
+        run: |
+          head -20 README.md | cat -A
+
       - name: Check formatting with Prettier
         run: npx prettier --check .
 
