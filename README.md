@@ -44,15 +44,6 @@ This optimization is achieved using an **advanced combinatorial optimization alg
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.  
 ブラウザで **[http://localhost:3000](http://localhost:3000)** を開くと、アプリの動作を確認できます。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.  
-**`app/page.tsx`** を編集することで、ページの内容をすぐに変更し始められます。ファイルを保存すると、ページは自動的に更新されます。
-
-This project uses `next/font` to automatically optimize and load Geist, a new font family for Vercel.  
-このプロジェクトでは、Vercelの新しいフォントファミリー「Geist」を自動的に最適化し読み込むために **`next/font`** を利用しています。
-
-You do not need to run `npm run build` for local development.  
-ローカル開発においては、**`npm run build`** を実行する必要はありません。
-
 ## Deployment
 
 This app is deployed online via AWS Amplify:  
