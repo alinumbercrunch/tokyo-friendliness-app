@@ -1,4 +1,4 @@
-# Tokyo Friendliness App
+## Tokyo Friendliness App
 
 This app optimizes prefecture groupings based on friendliness data to maximize total friendship scores using a combinatorial optimization algorithm. It fetches population data via API and assigns colors to each prefecture based on groupings.
 
