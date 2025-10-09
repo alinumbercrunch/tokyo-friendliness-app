@@ -1,3 +1,6 @@
+/**
+ * Shared TypeScript types and interfaces for the application.
+ */
 import { ALGORITHM } from "./constants";
 
 // Core types for partition optimization

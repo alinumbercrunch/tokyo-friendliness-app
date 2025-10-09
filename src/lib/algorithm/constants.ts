@@ -1,0 +1,14 @@
+export const MEMO_HIT_MESSAGE = "🎯 Memo hit: ";
+export const SCORE_MESSAGE = " -> score: ";
+export const NEW_BEST_SCORE_MESSAGE = "🏆 New best score: ";
+export const PARTITION_MESSAGE = ", partition:";
+export const PRUNED_BRANCH_MESSAGE = "✂️ Pruned branch at key: ";
+export const ALGORITHM_PERFORMANCE_SUMMARY_TITLE = "ALGORITHM PERFORMANCE SUMMARY";
+export const SEPARATOR = "================================";
+export const MEMOIZATION_HITS_MESSAGE = "Memoization hits: ";
+export const CACHE_EFFICIENCY_MESSAGE = " (cache efficiency)";
+export const BRANCHES_PRUNED_MESSAGE = "Branches pruned: ";
+export const OPTIMIZATION_EFFECTIVENESS_MESSAGE = " (optimization effectiveness)";
+export const BEST_SOLUTIONS_FOUND_MESSAGE = "Best solutions found: ";
+export const SOLUTION_QUALITY_IMPROVEMENTS_MESSAGE = " (solution quality improvements)";
+export const FINAL_BEST_SCORE_MESSAGE = "Final best score: ";

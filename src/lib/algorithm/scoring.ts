@@ -1,3 +1,6 @@
+/**
+ * Utility functions for calculating scores in the optimization algorithm.
+ */
 import type { Partition, FriendlinessMap } from "@/lib/shared/types";
 
 /**

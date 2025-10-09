@@ -1,3 +1,6 @@
+/**
+ * Utility functions for working with partitions in the optimization algorithm.
+ */
 import type { Partition, PartitionSet } from "@/lib/shared/types";
 
 /**

@@ -1,3 +1,6 @@
+/**
+ * Shared validation functions for the application.
+ */
 import type { FriendlinessMap } from "@/lib/shared/types";
 
 /**

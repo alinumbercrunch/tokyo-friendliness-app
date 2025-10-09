@@ -1,3 +1,6 @@
+/**
+ * Parses the friendliness data from the CSV file.
+ */
 import path from "path";
 import { promises as fs } from "fs";
 import Papa from "papaparse";

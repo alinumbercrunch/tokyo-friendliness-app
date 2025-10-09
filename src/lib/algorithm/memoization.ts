@@ -1,3 +1,6 @@
+/**
+ * Utility functions for memoization in the optimization algorithm.
+ */
 import type { Partition } from "@/lib/shared/types";
 
 /**

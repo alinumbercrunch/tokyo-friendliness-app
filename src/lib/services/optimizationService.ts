@@ -1,3 +1,7 @@
+/**
+ * Service for performing the prefecture optimization.
+ * Loads data, runs the algorithm, and returns the results.
+ */
 import { loadFriendlinessMatrix } from "@/lib/data/parseFriendlinessCSV";
 import {
   generateBestPartition,
