@@ -60,27 +60,25 @@ This app is deployed online via AWS Amplify:
 
 ## ✅ Lighthouse Audit Summary
 
-- **Performance**: 83
+- **Performance**: 100
 - **Accessibility**: 100
 - **Best Practices**: 100
 - **SEO**: 100
 
 This audit was conducted using Chrome DevTools Lighthouse.
 The app demonstrates strong technical quality, with perfect scores in accessibility, SEO, and best practices.
-Performance is already high and can be further improved with minor optimizations.
 
 ---
 
 ## ✅ Lighthouse監査サマリー
 
-- **パフォーマンス**: 83
+- **パフォーマンス**: 100
 - **アクセシビリティ**: 100
 - **ベストプラクティス**: 100
 - **SEO**: 100
 
 Chrome DevToolsのLighthouseを使用して監査を実施しました。
 アクセシビリティ、SEO、ベストプラクティスにおいて満点を獲得しており、技術的に非常に高品質なアプリです。
-パフォーマンスも高水準であり、軽微な最適化でさらに向上可能です。
 
 <img width="487" height="660" alt="Lighthouse result" src="public/Lighthouse-result.png" />
 
