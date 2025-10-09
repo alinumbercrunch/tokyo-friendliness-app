@@ -1,4 +1,4 @@
-## Tokyo Friendliness App
+# Tokyo Friendliness App
 
 This app optimizes prefecture groupings based on friendliness data to maximize total friendship scores using a combinatorial optimization algorithm. It fetches population data via API and assigns colors to each prefecture based on groupings.
 
@@ -44,15 +44,6 @@ This optimization is achieved using an **advanced combinatorial optimization alg
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.  
 ブラウザで **[http://localhost:3000](http://localhost:3000)** を開くと、アプリの動作を確認できます。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.  
-**`app/page.tsx`** を編集することで、ページの内容をすぐに変更し始められます。ファイルを保存すると、ページは自動的に更新されます。
-
-This project uses `next/font` to automatically optimize and load Geist, a new font family for Vercel.  
-このプロジェクトでは、Vercelの新しいフォントファミリー「Geist」を自動的に最適化し読み込むために **`next/font`** を利用しています。
-
-You do not need to run `npm run build` for local development.  
-ローカル開発においては、**`npm run build`** を実行する必要はありません。
-
 ## Deployment
 
 This app is deployed online via AWS Amplify:  
@@ -66,6 +57,34 @@ This app is deployed online via AWS Amplify:
   SSR（サーバーサイドレンダリング）と静的コンテンツの両方に対応
 - Environment variables securely managed  
   環境変数を安全に管理
+
+  ***
+
+## ✅ Lighthouse Audit Summary
+
+- **Performance**: 83
+- **Accessibility**: 100
+- **Best Practices**: 100
+- **SEO**: 100
+
+This audit was conducted using Chrome DevTools Lighthouse.  
+The app demonstrates strong technical quality, with perfect scores in accessibility, SEO, and best practices.  
+Performance is already high and can be further improved with minor optimizations.
+
+---
+
+## ✅ Lighthouse監査サマリー
+
+- **パフォーマンス**: 83
+- **アクセシビリティ**: 100
+- **ベストプラクティス**: 100
+- **SEO**: 100
+
+Chrome DevToolsのLighthouseを使用して監査を実施しました。  
+アクセシビリティ、SEO、ベストプラクティスにおいて満点を獲得しており、技術的に非常に高品質なアプリです。  
+パフォーマンスも高水準であり、軽微な最適化でさらに向上可能です。
+
+<img width="487" height="660" alt="Lighthouse result" src="https://github.com/user-attachments/assets/1d6c2556-0357-4c7b-8b85-350695f9ddb3" />
 
 ## Architecture Flowchart
 
@@ -115,7 +134,7 @@ graph TD
   <img src="https://img.shields.io/badge/React-20232a?logo=react&logoColor=61dafb" height="40"/>
   <img src="https://img.shields.io/badge/CSS%20Modules-264de4?logo=css3&logoColor=white" height="40"/>
   <img src="https://img.shields.io/badge/AWS%20Amplify-ff9900?logo=amazon-aws&logoColor=white" height="40"/>
-  <img src="https://img.shields.io/badge/PapaParse-4b8bbe?logo=data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwIiBoZWlnaHQ9IjE2IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTIgM2MtNS4yMyAwLTkgNC4yNy05IDkgMCA1LjI0IDQuMjcgOSA5IDkgNS4yNCAwIDktNC4yNiA5LTkgMC01LjczLTQuMjYtOS05LTk6bTAgMTZjLTMuODMgMC03LTMuMTcT7LTctNyA3IDAgMy44My0zLjE3IDctNyA3eiIvPjwvc3ZnPg==" height="40"/>
+  <img src="https://img.shields.io/badge/PapaParse-4b8bbe?logo=data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwIiBoZWlnaHQ9IjE2IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTIgM2MtNS4yMyAwLTkgNC4yNy05IDkgMCA1LjI0IDQuMjcgOSA5IDkgNS4yNCAwIDktNC4yNiA5LTkgMC01LjczLTQuMjYtOS05LTk6bTAgMTZjLTMuODMgMC03LTMuMTctNy03IDAgMy44My0zLjE3IDctNyA3eiIvPjwvc3ZnPg==" height="40"/>
   <img src="https://img.shields.io/badge/ESLint-4b32c3?logo=eslint&logoColor=white" height="40"/>
   <img src="https://img.shields.io/badge/Prettier-f7b93e?logo=prettier&logoColor=white" height="40"/>
   <img src="https://img.shields.io/badge/Mermaid-41b883?logo=mermaid&logoColor=white" height="40"/>
