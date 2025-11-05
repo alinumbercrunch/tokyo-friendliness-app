@@ -89,16 +89,16 @@ graph TD
 
   Dev[Developer] -->|push| GH[GitHub]
   GH -->|trigger| CI[ci.yml / GitHub Actions]
-  CI -->|deploy| Amplify[AWS Amplify<br>デプロイ]
-  Amplify -->|serve| UI[アプリ画面 App Interface]
+  CI -->|deploy| Amplify[AWS Amplify / デプロイ]
+  Amplify -->|serve| UI[アプリ画面 / App Interface]
 
-  A[CSVファイル friendliness.csv] -->|data| B[parseFriendlinessCSV.ts と CSV解析]
-  B -->|build| C[optimizationService.ts と FriendlinessMap生成]
-  C -->|use| D[最適化アルゴリズム Optimization Algorithm]
-  D -->|output| E[colorLegendUtils.ts と 色割り当て処理]
-  E -->|color| F[UI Components / UIコンポーネント, Legend and Population Table / 凡例・人口表]
+  A[CSVファイル friendliness.csv] -->|data| B[parseFriendlinessCSV.ts / CSV解析]
+  B -->|build| C[optimizationService.ts / FriendlinessMap生成]
+  C -->|use| D[最適化アルゴリズム / Optimization Algorithm]
+  D -->|output| E[colorLegendUtils.ts / 色割り当て処理]
+  E -->|color| F[UI Components / UIコンポーネント / 凡例・人口表]
 
-  G[e-Stat API 政府統計] -->|population| H[getStatsData.ts と 人口データ取得・フィルタ]
+  G[e-Stat API / 政府統計] -->|population| H[getStatsData.ts / 人口データ取得・フィルタ]
   H -->|link| F
 
   F -->|display| UI
@@ -115,7 +115,6 @@ graph TD
     E
     H
   end
-
 
   subgraph OutputSection[Output]
     F
