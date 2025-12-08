@@ -49,7 +49,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 This app is deployed online via AWS Amplify:
 このアプリは AWS Amplify を利用してオンラインで公開されています。
 
-**[https://chore-enable-ssr-compute.d20y2f4xdero1h.amplifyapp.com/](https://chore-enable-ssr-compute.d20y2f4xdero1h.amplifyapp.com/)**
+**[https://main.d20y2f4xdero1h.amplifyapp.com//](https://main.d20y2f4xdero1h.amplifyapp.com/)**
 
 - Automatic builds from the SSR compute branch
   SSR computeブランチからの自動ビルド
